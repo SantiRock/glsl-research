@@ -1,15 +1,19 @@
 {
-  "name": "vite-template-solid",
+  "name": "glsl-research",
   "version": "0.0.0",
-  "description": "",
+  "description": "glsl research",
+  "homepage": "https://santirock.github.io/glsl-research/",
   "scripts": {
     "start": "vite",
     "dev": "vite",
     "build": "vite build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "serve": "vite preview"
   },
   "license": "MIT",
   "devDependencies": {
+    "gh-pages": "^6.1.0",
     "solid-devtools": "^0.27.3",
     "vite": "^4.3.9",
     "vite-plugin-solid": "^2.7.0"
