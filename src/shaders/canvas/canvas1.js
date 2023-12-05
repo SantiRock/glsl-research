@@ -119,11 +119,15 @@ var mouseMove = function(e) {
    e.preventDefault();
 };
 
-canvas.addEventListener("mouseover", mouseDown, false);
-canvas.addEventListener("mousedown", mouseUp, false);
-canvas.addEventListener("mouseup", mouseDown, false);
-canvas.addEventListener("mouseout", mouseUp, false);
-canvas.addEventListener("mousemove", mouseMove, false);
+canvas.addEventListener("mouseover", mouseDown, false); // cuando entra el mouse al canvas
+canvas.addEventListener("mousedown", mouseUp, false); // cuando se hace click
+canvas.addEventListener("mouseup", mouseDown, false); // cuando se cuelta el click
+canvas.addEventListener("mouseout", mouseUp, false); // cuando sale el mouse del canvas
+canvas.addEventListener("mousemove", mouseMove, false); // cuando se mueve el mouse
+
+canvas.addEventListener("touchstart", mouseDown, false); // cuando el touch 
+canvas.addEventListener("touchmove", mouseMove, false); // cuando se mueve el touch
+canvas.addEventListener("touchend", mouseUp, false); // cuando se acaba el touch
 
 // Rotation
 function rotateX(m, angle) {
