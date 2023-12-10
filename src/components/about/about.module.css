@@ -1,0 +1,17 @@
+p {
+    padding-left: 15px;
+    padding-top: 5px;
+    font-size: 14px;
+    font-style: italic;
+    width: fit-content;
+    color: rgb(161, 187, 178);
+}
+
+p:hover {
+    cursor: none;
+    font-size: 24px;
+}
+
+.weigth {
+    color:rgb(147, 174, 179);
+}
