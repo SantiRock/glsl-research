@@ -9,7 +9,6 @@ function Canvas({id}) {
     );
 }
 
-
 export function Gallery() {
     const [isMobile, setIsMobile] = createSignal(false);
 

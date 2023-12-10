@@ -2,6 +2,8 @@
     display: flex;
     gap: 15px;
     flex-wrap: wrap;
+    justify-content: center;
+
 }
 
 .canvas_container {
@@ -16,4 +18,11 @@
 
 .canvas:hover {
     cursor: all-scroll;
+}
+
+@media screen and (min-width: 640px) {
+    .gallery{
+        justify-content: start;
+    }
+    
 }
