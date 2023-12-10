@@ -109,8 +109,6 @@ var mouseUp = function(e){
 
 var mouseMove = function(e) {
    if (!drag) return false;
-   //drag = true;
-   //old_x = e.pageX, old_y = e.pageY;
    dX = (e.pageX-old_x)*2*Math.PI/canvas.width,
    dY = (e.pageY-old_y)*2*Math.PI/canvas.height;
    THETA+= dX;
@@ -124,9 +122,10 @@ canvas.addEventListener("mouseup", mouseUp, false);
 canvas.addEventListener("mouseout", mouseUp, false);
 canvas.addEventListener("mousemove", mouseMove, false);
 
-//canvas.addEventListener("touchstart", mouseDown, false); // cuando el touch 
-//canvas.addEventListener("touchmove", mouseMove, false); // cuando se mueve el touch
-//canvas.addEventListener("touchend", mouseUp, false); // cuando se acaba el touch
+canvas.addEventListener("touchstart", mouseDown, false); // cuando el touch
+canvas.addEventListener("touchend", mouseUp, false); // cuando se acaba el touch
+canvas.addEventListener("touchmove", mouseMove, false); // cuando se mueve el touch
+
 
 // Rotation
 function rotateX(m, angle) {
