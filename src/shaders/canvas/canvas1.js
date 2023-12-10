@@ -103,6 +103,14 @@ var mouseDown = function(e) {
    return false;
 };
 
+var mouseDownTouch = function(e) {
+   drag = true;
+   let touch = e.touches[0];
+   old_x = touch.pageX, old_y = touch.pageY;
+   e.preventDefault();
+   return false;
+}
+
 var mouseUp = function(e){
    drag = false;
 };
@@ -117,14 +125,25 @@ var mouseMove = function(e) {
    e.preventDefault();
 };
 
+var mouseMoveTouch = function(e) {
+   if (!drag) return false;
+   let touch = e.touches[0];
+   dX = (touch.pageX-old_x)*2*Math.PI/canvas.width,
+   dY = (touch.pageY-old_y)*2*Math.PI/canvas.height;
+   THETA+= dX;
+   PHI+=dY;
+   old_x = touch.pageX, old_y = touch.pageY;
+   e.preventDefault();
+};
+
 canvas.addEventListener("mousedown", mouseDown, false);
 canvas.addEventListener("mouseup", mouseUp, false);
 canvas.addEventListener("mouseout", mouseUp, false);
 canvas.addEventListener("mousemove", mouseMove, false);
 
-canvas.addEventListener("touchstart", mouseDown, false); // cuando el touch
+canvas.addEventListener("touchstart", mouseDownTouch, false); // cuando el touch
 canvas.addEventListener("touchend", mouseUp, false); // cuando se acaba el touch
-canvas.addEventListener("touchmove", mouseMove, false); // cuando se mueve el touch
+canvas.addEventListener("touchmove", mouseMoveTouch, false); // cuando se mueve el touch
 
 
 // Rotation
