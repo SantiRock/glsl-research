@@ -26,7 +26,7 @@ export function Gallery() {
     return (
         <div class={styles.gallery}>
             <Show 
-                when={isMobile()}
+                when={!isMobile()}
                 fallback={<Canvas id="chakana1"/>}
             >
                 <Canvas id="chakana1"/>
