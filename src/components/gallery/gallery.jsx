@@ -10,16 +10,11 @@ function Canvas({id}) {
 }
 
 export function Gallery() {
-    const [isMobile, setIsMobile] = createSignal(false);
+    const [isMobile, setIsMobile] = createSignal(window.innerWidth <= 640);
 
     window.addEventListener('resize', () => {
       setIsMobile(window.innerWidth <= 640)
     });
-
-    onMount(() => {
-        console.log(window.innerWidth)
-        setIsMobile(window.innerWidth <= 640)
-    })
 
 
     return (
