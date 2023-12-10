@@ -105,7 +105,7 @@ var mouseDown = function(e) {
 
 var mouseDownTouch = function(e) {
    drag = true;
-   let touch = e.tragetTouches[0];
+   let touch = e.touches[0];
    old_x = touch.pageX, old_y = touch.pageY;
    e.preventDefault();
    return false;
@@ -127,7 +127,7 @@ var mouseMove = function(e) {
 
 var mouseMoveTouch = function(e) {
    if (!drag) return false;
-   let touch = e.targetTouches[0];
+   let touch = e.touches[0];
    dX = (touch.pageX-old_x)*2*Math.PI/canvas.width,
    dY = (touch.pageY-old_y)*2*Math.PI/canvas.height;
    THETA+= dX;
