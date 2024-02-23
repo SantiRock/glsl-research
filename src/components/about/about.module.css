@@ -1,10 +1,16 @@
+.container {
+    margin-top: 33px;
+}
+
 p {
+    margin: auto;
+    margin-bottom: 9px;
     padding-left: 15px;
     padding-top: 5px;
     font-size: 14px;
     font-style: italic;
     width: fit-content;
-    color: rgb(161, 187, 178);
+    color: rgb(154, 207, 188);
 }
 
 p:hover {
@@ -13,5 +19,5 @@ p:hover {
 }
 
 .weigth {
-    color:rgb(147, 174, 179);
+    color:rgb(215, 173, 196);
 }
